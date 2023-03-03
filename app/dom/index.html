@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/dom/css/main.css"/>
+
+  <title> Practice 28-02-2023 </title>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Productos</a></li>
+      <li><a href="#">Carrito</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  <div class="card" id="card-1">
+    <img src="/dom/images/bici.jpg" alt="Libro">
+    <h2>Bicicleta de montaña</h2>
+    <p>Una bicicleta perfecta para recorrer los senderos de montaña.</p>
+    <button onclick="AddCart('btn-1', 'card-1')" id="btn-1">Comprar</button>
+  </div>
+
+  <div class="card" id="card-2">
+    <img src="/dom/images/book.jpeg" alt="Libro">
+    <h2>El Gran Gatsby</h2>
+    <p>Un clásico de la literatura estadounidense, escrito por F. Scott Fitzgerald.</p>
+    <button onclick="AddCart('btn-2', 'card-2')" id="btn-2">Comprar</button>
+  </div>
+
+  <div class="card" id="card-3">
+    <img src="/dom/images/laptop.jpg" alt="Libro">
+    <h2>Laptop Lenovo</h2>
+    <p>Una laptop de alta calidad con procesador Intel Core i7 y 16 GB de RAM.</p>
+    <button onclick="AddCart('btn-3', 'card-3')" id="btn-3">Comprar</button>
+  </div>
+</div>
+
+
+<script src="/dom/js/script.js"> </script>
+</body>
+</html>

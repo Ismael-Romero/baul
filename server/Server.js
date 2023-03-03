@@ -1,6 +1,7 @@
 const cors = require('cors');
-const path = require('node:path');
 const express = require('express');
+
+const getPublic = require('../tools/getPublci');
 
 class  Server {
 
@@ -21,8 +22,9 @@ class  Server {
         // The static files are served to the client when they are accessed
         // through their root route followed by the name of the folder and file to be displayed:
         // (EJ:) /home/css/main.css
-        this.app.use('/home', express.static(path.join(__dirname, '../app/home/public')));
-        this.app.use('/counter', express.static(path.join(__dirname, '../app/counter/public')));
+        this.app.use('/home', express.static(getPublic('home')));
+        this.app.use('/dom', express.static(getPublic('dom')));
+        this.app.use('/counter', express.static(getPublic('counter')));
     }
 
     routes(){
