@@ -1,0 +1,204 @@
+body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin: 0;
+}
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.color-title{ color: white; }
+
+.container-header{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 25rem;
+
+    background-image: linear-gradient(rgba(0, 28, 98, 0.1), rgba(1, 36, 115, 0.3)), url("/home/images/cover.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-header .container {
+    position: absolute;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: calc(100% - 80px);
+    height: auto;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.social-icons {
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.social-icons ul li{
+    display: block;
+    padding: 10px;
+}
+
+.social-icons ul li a{
+    color: white;
+    font-size: 1.8rem;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.social-icons ul li a:hover{
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+
+    font-size: 2rem;
+    border-bottom: 3px solid orange;
+}
+
+.typewriter {
+    display: block;
+    white-space: nowrap;
+    border-right: 2px solid orange;
+    width: 13ch;
+
+    animation:
+            typing 2s steps(12),
+            blink-caret .3s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {width: 0}
+}
+
+@keyframes blink-caret {
+    50% {border-color: transparent;}
+}
+
+.projects {
+    margin: 20px;
+    width: calc(100% - 40px);
+
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+
+    height: auto;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.card:hover{
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 200, 0.5);
+}
+
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.card-icon i {
+    max-width: 100%;
+    font-size: 2rem;
+}
+
+.card-content {
+    padding: 15px;
+    width: 75%;
+}
+
+.card-content h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+}
+
+.card-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card-icon {
+        display: none;
+    }
+
+    .card-content {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container-body {
+        margin: 2rem;
+        padding: 3rem;
+    }
+
+    .container-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container-body {
+        margin: 1rem;
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 24px;
+}
+
+.cuadricula_capa {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.titulo {
+    margin-top: 0;
+}
+
+.botones_capa {
+    margin-top: 20px;
+}
+
+.parrafo{
+    font-size: 45px;
+    font-weight: bolder;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.btn {
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#btn-1 {
+    background-color: black;
+}
+
+#btn-2 {
+    background-color: white;
+    color: black;
+}
+
+#btn-3 {
+    background-color: blue;
+}
