@@ -25,6 +25,7 @@ class  Server {
         this.app.use('/home', express.static(getPublic('home')));
         this.app.use('/dom', express.static(getPublic('dom')));
         this.app.use('/counter', express.static(getPublic('counter')));
+        this.app.use('/dbapp', express.static(getPublic('dbapp')));
     }
 
     routes(){
