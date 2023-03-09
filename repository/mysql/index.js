@@ -1,4 +1,4 @@
-const mysql = require('mysql2/promise')
+const mysql = require('mysql2')
 
 class Repository {
 
@@ -9,10 +9,10 @@ class Repository {
     }
 
     ConnectTo(database){
-        return mysql.createConnection({
-            host: 'localhost',
-            user: 'local_manager',
-            password: '(@)9176Avrmx',
+        return mysql.createPool({
+            host: this.host,
+            user: this.user,
+            password: this.password,
             database: database
         });
     }
