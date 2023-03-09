@@ -18,21 +18,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get('/products', (req, res, next) => {
-
-    let db = mysql.ConnectTo('dbapp')
-
-    db.query('SELECT * FROM products', (error, results, fields) => {
-        if (error) throw error;
-        if (!error) {
-            res.json(results)
+router.get('/products', (req, res) => {
+    const db = mysql.ConnectTo('dbapp')
+    db.query('SELECT * FROM products', (err, rows) => {
+        if (err) throw err;
+        if (!err) {
+            res.json(rows)
         }
     });
-
-    db.end()
 });
 
-router.post('/product', upload.single('image'), (req, res, next) => {
+router.post('/product', upload.single('image'), (req, res) => {
 
     let name, price, image;
 
@@ -54,13 +50,11 @@ router.post('/product', upload.single('image'), (req, res, next) => {
     price = parseFloat(req.body.price);
     image = `/dbapp/images/${req.file.filename}`;
 
-    let db = mysql.ConnectTo('dbapp');
-    let sql = `INSERT INTO products (image, name, price) VALUES ("${image}","${name}",${price})`
-    db.query(sql, (error, results, fields) => {
-        if (error) throw error;
+    const db = mysql.ConnectTo('dbapp');
+    const sql = `INSERT INTO products (image, name, price) VALUES ("${image}","${name}",${price})`
+    db.query(sql, (err, rows) => {
+        if (err) throw err;
     });
-
-    db.end();
 
     res.status(307).redirect('/dbapp/inventory?status=1')
 })
