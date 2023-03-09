@@ -2,15 +2,18 @@ const router = require('express').Router();
 const Repository = require('../../../repository/mysql');
 const mysql = new Repository();
 
-router.get('/', (req, res, next) => {
-    let db = mysql.ConnectTo('ping')
+router.get('/', async (req, res, next) => {
+    const db = await mysql.ConnectTo('ping')
+    const [rows, fields] = await db.execute('SELECT message FROM ping');
 
-    db.query('SELECT message AS message FROM ping LIMIT 1', function (error, results, fields) {
-        res.json({
-            message: results[0].message
-        });
-    })
+    // db.query('SELECT message FROM ping', function (error, results, fields) {
+    //     console.log(error)
+    //     res.json({
+    //         message: results
+    //     });
+    // })
 
+    res.status(200).send(rows[0].message)
     db.end()
 });
 
