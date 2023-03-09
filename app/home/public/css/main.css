@@ -112,93 +112,59 @@ h3 {
     text-align: center;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .card {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ccc;
     border-radius: 5px;
-    overflow: hidden;
+    box-shadow: 2px 2px 5px #ccc;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
 
-    height: auto;
-    text-decoration: none;
-    color: black;
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-family:"Calibri Light", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
+    transition: background-color 0.3s;
 }
 
-.card:hover{
-    transition-duration: .3s;
-    transition-timing-function: ease-in-out;
-    box-shadow: 0 0 15px rgba(0, 0, 200, 0.5);
+.card button:hover {
+    background-color: #0D47A1;
 }
 
-.card-icon {
+.card-shadow {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    box-shadow: 0 0 20px #0a45b6;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
-}
-
-.card-icon i {
-    max-width: 100%;
-    font-size: 2rem;
-}
-
-.card-content {
-    padding: 15px;
-    width: 75%;
-}
-
-.card-content h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-
-    font-family: 'Lato', sans-serif;
-    font-size: 1.4rem;
-}
-
-.card-content p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-@media only screen and (max-width: 768px) {
-    .card {
-        flex-direction: column;
-    }
-
-    .card-icon {
-        display: none;
-    }
-
-    .card-content {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .container-body {
-        margin: 2rem;
-        padding: 3rem;
-    }
-
-    .container-cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .container-body {
-        margin: 1rem;
-        padding: 2rem;
-    }
+    flex-wrap: wrap;
 }
