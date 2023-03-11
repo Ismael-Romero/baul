@@ -47,11 +47,12 @@ router.post('/product', upload.single('image'), async (req, res) => {
 
     if (!req.file){
         image = '/dbapp/images/no-available.jpeg';
+    }else {
+        image = `/dbapp/images/${req.file.filename}`;
     }
 
     name = req.body.name;
     price = parseFloat(req.body.price);
-    image = `/dbapp/images/${req.file.filename}`;
 
     try{
         const db = await mysql.ConnectTo('dbapp');
